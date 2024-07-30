@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link rel="stylesheet" href="Task1.css">
+</head>
+<body>
+    <div class="video-container">
+        <video id="videoPlayer" controls>
+            <source src="D:\CODING\.vscode\NullClassTask\video\Jawan (2023) Hindi HD Netflix WEB-DL 1080p - Vegamovies.to.mkv-">
+        </video>
+        <div class="controls">
+            <button id="playPause"></button>
+        <select id="resolutionsSelection">
+            <option value="144p"></option>
+            <option value="240p"></option>
+            <option value="320p"></option>
+            <option value="480p"></option>
+            <option value="720p" selected></option>
+            <option value="1080p"></option>
+        </select>
+        </div>
+    </div>
+    <!-- Private Chat Room -->
+    <div id="roomContainer">
+        <input type="text" id="roomNameInput" placeholder="Enter room name">
+        <button id="createRoomButton">Create Room</button>
+    </div>
+    <div id="chatContainer" style="display: none;">
+        <div id="chatBox"></div>
+        <input type="text" id="messageInput" placeholder="Type a message">
+        <button id="sendMessageButton">Send</button>
+    </div>
+    <div id="otpContainer" style="display: none;">
+        <input type="text" id="otpInput" placeholder="Enter OTP">
+        <button id="verifyOtpButton">Verify OTP</button>
+    </div>
+    <div id="quetion-details">
+        <h1>{{question.title}}</h1>
+        <p>{{question.description}}</p>
+        <button id="requestCodeButton">Request Code</button>
+    </div>
+    <div id="questions-container">
+        <!--Questions and ads will be dynamically inserted here-->
+    </div>
+    <div id="comment-section">
+        <textarea id="comment-input" placeholder="Type your comment..."></textarea>
+        <button id="submit-comment">submit</button>
+        <div id="comment-container"></div>
+    </div>
+    <script src="Task1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="Functionality.js"></script> 
+    <script src="script.js"></script>
+    <script src="otpService.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
