@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded',(event)=>
             } 
     }
     //Gesture controls
-   // let startX;
-   // let startTime;
+   let startX;
+   let startTime;
     videoPlayer.addEventListener('touchstart',(event)=>
     {
         const touch=event.toches[0];
@@ -133,10 +133,10 @@ document.addEventListener('DOMContentLoaded',(event)=>
     }
     videoPlayer.addEventListener('touchmove',(event)=>
     {
-        /*const touch=event.touches[0];
+        const touch=event.touches[0];
         const diffX=touch.clientX - startX;
         const newTime=startTime + (diffX/10);
-        videoPlayer.currentTime=Math.max(0,Math.min(videoPlayer.onduration,newTime));*/
+        videoPlayer.currentTime=Math.max(0,Math.min(videoPlayer.onduration,newTime));
         if (holding)
         {
             clearInterval(holdInterval);
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded',(event)=>
             handleHold(touch.clientX);
         }
     });
-   /* videoPlayer.addEventListener('dblclick',()=>
+    videoPlayer.addEventListener('dblclick',()=>
     {
         if (videoPlayer.requestFullscreen) 
         {
@@ -162,5 +162,5 @@ document.addEventListener('DOMContentLoaded',(event)=>
         {
             videoPlayer.msRequestFullscreen();   
         }
-    });*/
+    });
 });
